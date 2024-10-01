@@ -1,4 +1,11 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+} from "react-native";
 import React from "react";
 import Colors from "../../Utils/Colors";
 
@@ -9,7 +16,7 @@ export default function LoginScreen() {
         display: "",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 30,
+        marginTop: 80,
       }}
     >
       <Image
@@ -28,6 +35,21 @@ export default function LoginScreen() {
           Find Ev charging stations near you, plan a trip and much more with one
           click
         </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => Alert.alert("Button Clicked")}
+        >
+          <Text
+            style={{
+              color: Colors.WHITE,
+              textAlign: "center",
+              fontFamily: "poppins",
+              fontSize: 17,
+            }}
+          >
+            Sign in with Google
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -57,5 +79,12 @@ const styles = StyleSheet.create({
     marginTop: 15,
     textAlign: "center",
     color: Colors.GRAY,
+  },
+  button: {
+    backgroundColor: Colors.PRIMARY,
+    padding: 16,
+    display: "flex",
+    borderRadius: 99,
+    marginTop: 70,
   },
 });
